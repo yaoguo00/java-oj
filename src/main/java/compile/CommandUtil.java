@@ -30,7 +30,7 @@ public class CommandUtil {
             InputStream stdoutFrom=process.getInputStream();
             OutputStream stdoutTo=new FileOutputStream(stdoutFile);
             int ch=-1;
-            while((ch=stdoutFrom.read())!=-1){
+            while((ch=stdoutFrom.read())!= -1){
                 stdoutTo.write(ch);
             }
             stdoutFrom.close();

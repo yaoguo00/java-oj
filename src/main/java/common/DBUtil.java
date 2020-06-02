@@ -22,11 +22,11 @@ public class DBUtil {
 
     public static DataSource getDataSource(){
         //提高效率,线程安全版本的单例模式
-        //线程安全版本的单例模式，核心操作有三点：synchronize加锁，双重if判定,volatile关键字
-        if(dataSource ==null){
+        //线程安全版本的单例模式，核心操作有三点：synchronized加锁，双重if判定,volatile关键字
+        if(dataSource == null){
             synchronized (DBUtil.class) {
                 if(dataSource == null){
-                    dataSource =new MysqlDataSource();
+                    dataSource = new MysqlDataSource();
                     ((MysqlDataSource)dataSource).setURL(URL);
                     ((MysqlDataSource)dataSource).setUser(USERNAME);
                     ((MysqlDataSource)dataSource).setPassword(PASSWORD);
