@@ -60,6 +60,7 @@ public class Task {
             System.out.println("编译出错");
             answer.setError(1);
             answer.setReason(compileError);
+            return answer;
         }
         //3.构造运行命令，并执行
         //  运行命令形式如：java -classpath ./tmp/ Solution
