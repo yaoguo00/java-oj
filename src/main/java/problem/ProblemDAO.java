@@ -147,12 +147,13 @@ public class ProblemDAO {
                 "输出: 2 \n" +
                 "解释: 各位相加的过程为：3 + 8 = 11, 1 + 1 = 2。 由于 2 是一位数，所以返回 2。\n" +
                 "\n");
-        problem.setTemplateCode("class Solution {\n" +
+        problem.setTemplateCode(
+                "public class Solution {\n" +
                 "    public int addDigits(int num) {\n" +
                 "\n" +
                 "    }\n" +
                 "}");
-        problem.setTestCode("public class TestCode {\n" +
+        problem.setTestCode(
                 "    public static void main(String[] args) {\n" +
                 "        Solution s = new Solution();\n" +
                 "        if(s.addDigits(38) == 2) {\n" +
@@ -166,8 +167,7 @@ public class ProblemDAO {
                 "        }else{\n" +
                 "            System.out.println(\"testfailed\");\n" +
                 "        }\n" +
-                "    }\n" +
-                "}");
+                "    }\n");
         ProblemDAO problemDAO = new ProblemDAO();
         problemDAO.insert(problem);
         System.out.println("insert ok");
