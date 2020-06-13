@@ -136,10 +136,11 @@ public class ProblemDAO {
 
     public static void main(String[] args) {
         //1.验证insert操作
-        Problem problem = new Problem();
-        problem.setTitle("各位相加");
-        problem.setLevel("简单");
-        problem.setDescription("给定一个非负整数 num，反复将各个位上的数字相加，直到结果为一位数。\n" +
+        //题目1
+        Problem problem1 = new Problem();
+        problem1.setTitle("各位相加");
+        problem1.setLevel("简单");
+        problem1.setDescription("给定一个非负整数 num，反复将各个位上的数字相加，直到结果为一位数。\n" +
                 "\n" +
                 "示例:\n" +
                 "\n" +
@@ -147,13 +148,13 @@ public class ProblemDAO {
                 "输出: 2 \n" +
                 "解释: 各位相加的过程为：3 + 8 = 11, 1 + 1 = 2。 由于 2 是一位数，所以返回 2。\n" +
                 "\n");
-        problem.setTemplateCode(
+        problem1.setTemplateCode(
                 "public class Solution {\n" +
                 "    public int addDigits(int num) {\n" +
                 "\n" +
                 "    }\n" +
                 "}");
-        problem.setTestCode(
+        problem1.setTestCode(
                 "    public static void main(String[] args) {\n" +
                 "        Solution s = new Solution();\n" +
                 "        if(s.addDigits(38) == 2) {\n" +
@@ -169,8 +170,53 @@ public class ProblemDAO {
                 "        }\n" +
                 "    }\n");
         ProblemDAO problemDAO = new ProblemDAO();
-        problemDAO.insert(problem);
+        problemDAO.insert(problem1);
         System.out.println("insert ok");
+
+        //题目2
+        Problem problem2 = new Problem();
+        problem2.setTitle("第一个只出现一次的字符");
+        problem2.setLevel("简单");
+        problem2.setDescription("在字符串 s 中找出第一个只出现一次的字符。如果没有，返回一个单空格。 s 只包含小写字母。\n" +
+                "\n" +
+                "示例:\n" +
+                "\n" +
+                "s = \"abaccdeff\"\n" +
+                "返回 \"b\"\n" +
+                "\n" +
+                "s = \"\" \n" +
+                "返回 \" \"\n" +
+                "\n");
+        problem2.setTemplateCode("public class Solution {\n" +
+                "    public char firstUniqChar(String s) {\n" +
+                "\n" +
+                "    }\n" +
+                "}");
+        problem2.setTestCode(
+                "    public static void main(String[] args) {\n" +
+                        "        Solution s = new Solution();\n" +
+                        "        if(s.firstUniqChar('abaccdeff') == 'b') {\n" +
+                        "            System.out.println(\"test OK\");\n" +
+                        "        }else{\n" +
+                        "            System.out.println(\"testfailed\");\n" +
+                        "        }\n" +
+                        "\n" +
+                        "        if(s.firstUniqChar('adweewadf') == 'f') {\n" +
+                        "            System.out.println(\"test OK\");\n" +
+                        "        }else{\n" +
+                        "            System.out.println(\"testfailed\");\n" +
+                        "        }\n"+
+                        "        if(s.firstUniqChar('') == ' ') {\n" +
+                        "            System.out.println(\"test OK\");\n" +
+                        "        }else{\n" +
+                        "            System.out.println(\"testfailed\");\n" +
+                        "        }\n"+
+                        "    }\n");
+        ProblemDAO problemDAO2 = new ProblemDAO();
+        problemDAO2.insert(problem2);
+        System.out.println("insert ok");
+
+
 
 
 //        //2.测试selectAll

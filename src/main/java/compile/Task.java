@@ -22,7 +22,7 @@ public class Task {
     //要编译的代码对应的文件，需要和类名一致
     private  static final String CODE = WORK_DIR + "Solution.java";
     //标准输入对应的文件（其实没用到）
-    private  static final String STOIN = WORK_DIR + "stdin.txt";
+    private  static final String STDIN = WORK_DIR + "stdin.txt";
     //标准输出对应的文件（编译执行的代码的结果保存在到这个文件中）
     private  static final String STDOUT = WORK_DIR + "stdout.text";
     //标准错误对应的文件（编译执行的代码的结果保存在到这个文件中）
@@ -41,7 +41,7 @@ public class Task {
         }
         //1.根据Question对象，构造一些临时文件
         FileUtil.writeFile(CODE,question.getCode());
-        FileUtil.writeFile(STOIN,question.getStdin());
+        FileUtil.writeFile(STDIN,question.getStdin());
         //2.构造编译命令，并执行
         //  编译命令形如 javac -encoding utf8  ./tmp/Solution.java -d ./tmp/
         //  直接通过字符串拼接，有的时候如果太复杂，容易出错，尤其是命令选项多的时候，很容易少空格之类的
